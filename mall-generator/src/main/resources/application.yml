@@ -1,0 +1,11 @@
+
+spring:
+  application:
+    name: mall-admin
+  profiles:
+    active: dev #默认为开发环境
+
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+    - classpath*:cn/**/mapper/*.xml
