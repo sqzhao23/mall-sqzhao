@@ -1,17 +1,66 @@
-<configuration scan="true" scanPeriod="60 seconds" debug="false">
-    <property name="test-name" value="test-demo" />
-    <contextName>${glmapper-name}</contextName>
+<configuration>
+    <!-- 属性文件:在properties文件中找到对应的配置项 -->
+    <springProperty scope="context" name="logging.path" source="logging.file.path"/>
+    <springProperty scope="context" name="logging.root.level" source="logging.level.root"/>
+    <property name="log.pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %green([%thread]) %highlight(%-5level) %boldMagenta(%logger{20}) - [%method,%line] - %msg%n"/>
 
-
-    <appender>
-        //xxxx
+    <!-- 默认的控制台日志输出，一般生产环境都是后台启动，这个没太大作用 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>${log.pattern}</Pattern>
+            <charset>UTF-8</charset>
+        </encoder>
     </appender>
 
-    <logger>
-        //xxxx
-    </logger>
+    <appender name="file_info" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>false</append>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>${logging.admin-dev.level}</level>
+        </filter>
+        <file>
+            ${logging.path}/admin-info.log
+        </file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${logging.path}/admin-info.log.%d{yyyy-MM-dd}</FileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${log.pattern}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
 
-    <root>
-        //xxxx
+    <appender name="file_error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>false</append>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <file>
+            ${logging.path}/admin-error.log
+        </file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logging.path}/admin-error.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <logger name="cn.nice2cu.admin" level="info"/>
+    <logger name="cn.nice2cu.admin.mapper" level="debug"/>
+    <logger name="org.springframework" level="warn"/>
+
+    <root level="info">
+        <appender-ref ref="console"/>
     </root>
+
+    <root level="info">
+        <appender-ref ref="file_info"/>
+        <appender-ref ref="file_error"/>
+    </root>
+
 </configuration>

@@ -1,6 +1,6 @@
 package cn.nice2cu.admin.mapper;
 
-import cn.nice2cu.admin.entity.PmsBrand;
+import cn.nice2cu.admin.domain.entity.PmsBrand;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

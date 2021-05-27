@@ -1,15 +1,14 @@
 package cn.nice2cu.admin.service.impl;
 
-import cn.nice2cu.admin.entity.PmsBrand;
+import cn.nice2cu.admin.domain.entity.PmsBrand;
 import cn.nice2cu.admin.mapper.PmsBrandMapper;
 import cn.nice2cu.admin.service.PmsBrandService;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.github.pagehelper.PageHelper;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.sql.Wrapper;
-import java.util.List;
 
 /**
  * <p>
@@ -26,33 +25,33 @@ public class PmsBrandServiceImpl extends ServiceImpl<PmsBrandMapper, PmsBrand> i
 
     @Override
     public List<PmsBrand> listAllBrand() {
-        return pmsBrandMapper.selectList(null);
+        return this.list();
     }
 
     @Override
-    public int createBrand(PmsBrand brand) {
-        return pmsBrandMapper.insertSelective(brand);
+    public boolean createBrand(PmsBrand brand) {
+        return this.save(brand);
     }
 
     @Override
-    public int updateBrand(Long id, PmsBrand brand) {
+    public boolean updateBrand(Long id, PmsBrand brand) {
         brand.setId(id);
-        return pmsBrandMapper.updateByPrimaryKeySelective(brand);
+        return this.updateById(brand);
     }
 
     @Override
-    public int deleteBrand(Long id) {
-        return pmsBrandMapper.deleteByPrimaryKey(id);
+    public boolean deleteBrand(Long id) {
+        return this.removeById(id);
     }
 
     @Override
-    public List<PmsBrand> listBrand(int pageNum, int pageSize) {
-        PageHelper.startPage(pageNum, pageSize);
-        return pmsBrandMapper.selectByExample(new PmsBrandExample());
+    public IPage<PmsBrand> listBrand(int pageNum, int pageSize) {
+        IPage<PmsBrand> page = new Page<>(pageNum, pageSize);
+        return this.page(page);
     }
 
     @Override
     public PmsBrand getBrand(Long id) {
-        return pmsBrandMapper.selectByPrimaryKey(id);
+        return this.getById(id);
     }
 }

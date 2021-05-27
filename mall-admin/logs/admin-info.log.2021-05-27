@@ -1,0 +1,36 @@
+2021-05-27 23:58:13.781 [main] INFO  c.n.a.MallAdminApplication - [logStarting,55] - Starting MallAdminApplication using Java 1.8.0_291 on DESKTOP-F15QS1S with PID 6924 (E:\Projects\mall-sqzhao\mall-admin\target\classes started by sqzhao in E:\Projects\mall-sqzhao)
+2021-05-27 23:58:13.784 [main] INFO  c.n.a.MallAdminApplication - [logStartupProfileInfo,679] - The following profiles are active: dev
+2021-05-27 23:58:14.821 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-27 23:58:14.821 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+2021-05-27 23:58:14.822 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-27 23:58:14.880 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2021-05-27 23:58:15.915 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-05-27 23:58:16.110 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-27 23:58:16.122 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,160] - Context refreshed
+2021-05-27 23:58:16.132 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,163] - Found 1 custom documentation plugin(s)
+2021-05-27 23:58:16.153 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,41] - Scanning for api listing references
+2021-05-27 23:58:16.257 [main] INFO  c.n.a.MallAdminApplication - [logStarted,61] - Started MallAdminApplication in 2.837 seconds (JVM running for 3.454)
+2021-05-27 23:58:16.779 [RMI TCP Connection(2)-192.168.183.1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-27 23:58:16.779 [RMI TCP Connection(1)-192.168.183.1] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariPool-1 - Starting...
+2021-05-27 23:58:17.235 [RMI TCP Connection(1)-192.168.183.1] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariPool-1 - Start completed.
+2021-05-27 23:58:27.500 [http-nio-8080-exec-1] INFO  c.n.a.c.PmsBrandController - [helloTest,96] - HELLO-INFO
+2021-05-27 23:58:27.501 [http-nio-8080-exec-1] WARN  c.n.a.c.PmsBrandController - [helloTest,98] - HELLO-WARN
+2021-05-27 23:58:27.501 [http-nio-8080-exec-1] ERROR c.n.a.c.PmsBrandController - [helloTest,99] - HELLO-ERROR
+2021-05-27 23:59:04.399 [main] INFO  c.n.a.MallAdminApplication - [logStarting,55] - Starting MallAdminApplication using Java 1.8.0_291 on DESKTOP-F15QS1S with PID 16848 (E:\Projects\mall-sqzhao\mall-admin\target\classes started by sqzhao in E:\Projects\mall-sqzhao)
+2021-05-27 23:59:04.402 [main] INFO  c.n.a.MallAdminApplication - [logStartupProfileInfo,679] - The following profiles are active: dev
+2021-05-27 23:59:05.382 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-27 23:59:05.382 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+2021-05-27 23:59:05.382 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-27 23:59:05.437 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2021-05-27 23:59:06.289 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-05-27 23:59:06.484 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-27 23:59:06.494 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,160] - Context refreshed
+2021-05-27 23:59:06.504 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,163] - Found 1 custom documentation plugin(s)
+2021-05-27 23:59:06.524 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,41] - Scanning for api listing references
+2021-05-27 23:59:06.626 [main] INFO  c.n.a.MallAdminApplication - [logStarted,61] - Started MallAdminApplication in 2.575 seconds (JVM running for 3.21)
+2021-05-27 23:59:07.206 [RMI TCP Connection(2)-192.168.183.1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-27 23:59:07.206 [RMI TCP Connection(1)-192.168.183.1] INFO  c.z.h.HikariDataSource - [getConnection,110] - HikariPool-1 - Starting...
+2021-05-27 23:59:07.583 [RMI TCP Connection(1)-192.168.183.1] INFO  c.z.h.HikariDataSource - [getConnection,123] - HikariPool-1 - Start completed.
+2021-05-27 23:59:21.123 [http-nio-8080-exec-1] INFO  c.n.a.c.PmsBrandController - [helloTest,96] - HELLO-INFO
+2021-05-27 23:59:21.124 [http-nio-8080-exec-1] WARN  c.n.a.c.PmsBrandController - [helloTest,98] - HELLO-WARN
+2021-05-27 23:59:21.124 [http-nio-8080-exec-1] ERROR c.n.a.c.PmsBrandController - [helloTest,99] - HELLO-ERROR

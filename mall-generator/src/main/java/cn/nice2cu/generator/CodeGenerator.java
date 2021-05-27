@@ -4,12 +4,16 @@ import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
-import com.baomidou.mybatisplus.generator.config.*;
+import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
+import com.baomidou.mybatisplus.generator.config.FileOutConfig;
+import com.baomidou.mybatisplus.generator.config.GlobalConfig;
+import com.baomidou.mybatisplus.generator.config.PackageConfig;
+import com.baomidou.mybatisplus.generator.config.StrategyConfig;
+import com.baomidou.mybatisplus.generator.config.TemplateConfig;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.VelocityTemplateEngine;
 import io.micrometer.core.instrument.util.StringUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -80,6 +84,7 @@ public class CodeGenerator {
         PackageConfig pc = new PackageConfig();
         // pc.setModuleName("");
         pc.setParent("cn.nice2cu.admin");
+        pc.setEntity("domain.entity");
         mpg.setPackageInfo(pc);
 
         // 如果模板引擎是 velocity
@@ -87,6 +92,7 @@ public class CodeGenerator {
 
         // 自定义输出配置
         List<FileOutConfig> focList = new ArrayList<>();
+
         // 自定义配置会被优先输出
         focList.add(new FileOutConfig(templatePath) {
             @Override

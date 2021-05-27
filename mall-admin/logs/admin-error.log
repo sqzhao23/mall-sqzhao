@@ -1,0 +1,2 @@
+2021-05-28 00:30:30.351 [http-nio-8080-exec-1] ERROR c.n.a.c.PmsBrandController - [helloTest,99] - HELLO-ERROR
+2021-05-28 00:41:05.730 [32m[http-nio-8080-exec-1][0;39m [1;31mERROR[0;39m [1;35mc.n.a.c.PmsBrandController[0;39m - [helloTest,99] - HELLO-ERROR
