@@ -1,0 +1,17 @@
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <property name="test-name" value="test-demo" />
+    <contextName>${glmapper-name}</contextName>
+
+
+    <appender>
+        //xxxx
+    </appender>
+
+    <logger>
+        //xxxx
+    </logger>
+
+    <root>
+        //xxxx
+    </root>
+</configuration>
