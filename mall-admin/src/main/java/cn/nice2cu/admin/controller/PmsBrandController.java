@@ -5,18 +5,13 @@ import cn.nice2cu.admin.domain.entity.PmsBrand;
 import cn.nice2cu.admin.service.PmsBrandService;
 import cn.nice2cu.common.api.CommonResult;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * <p>
@@ -81,7 +76,7 @@ public class PmsBrandController {
 
     @GetMapping(value = "/list")
     public CommonResult<IPage<PmsBrand>> listBrand(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
-                                                        @RequestParam(value = "pageSize", defaultValue = "3") Integer pageSize) {
+                                                        @RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize) {
         IPage<PmsBrand> brandList = pmsBrandService.listBrand(pageNum, pageSize);
         return CommonResult.success(brandList);
     }

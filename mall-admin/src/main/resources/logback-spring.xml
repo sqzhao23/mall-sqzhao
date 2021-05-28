@@ -7,7 +7,7 @@
     <!-- 默认的控制台日志输出，一般生产环境都是后台启动，这个没太大作用 -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <Pattern>${log.pattern}</Pattern>
+            <pattern>${log.pattern}</pattern>
             <charset>UTF-8</charset>
         </encoder>
     </appender>
@@ -15,7 +15,7 @@
     <appender name="file_info" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <append>false</append>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>${logging.admin-dev.level}</level>
+            <level>INFO</level>
         </filter>
         <file>
             ${logging.path}/admin-info.log
@@ -44,7 +44,7 @@
             <fileNamePattern>${logging.path}/admin-error.log.%d{yyyy-MM-dd}</fileNamePattern>
             <maxHistory>7</maxHistory>
         </rollingPolicy>
-        <encoder>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>${log.pattern}</pattern>
             <charset>UTF-8</charset>
         </encoder>
