@@ -6,6 +6,7 @@ import cn.nice2cu.admin.service.PmsBrandService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +21,8 @@ import java.util.List;
  */
 @Service
 public class PmsBrandServiceImpl extends ServiceImpl<PmsBrandMapper, PmsBrand> implements PmsBrandService {
+
+    @Autowired PmsBrandMapper pmsBrandMapper;
 
     @Override
     public List<PmsBrand> listAllBrand() {
@@ -44,8 +47,8 @@ public class PmsBrandServiceImpl extends ServiceImpl<PmsBrandMapper, PmsBrand> i
 
     @Override
     public IPage<PmsBrand> listBrand(int pageNum, int pageSize) {
-        IPage<PmsBrand> page = new Page<>(pageNum, pageSize);
-        return this.page(page);
+        Page<PmsBrand> page = new Page<>(pageNum, pageSize);
+        return pmsBrandMapper.selectPageVo(page);
     }
 
     @Override

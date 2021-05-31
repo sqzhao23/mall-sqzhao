@@ -22,4 +22,9 @@
         id, name, first_letter, sort, factory_status, show_status, product_count, product_comment_count, logo, big_pic, brand_story
     </sql>
 
+    <!-- 分页查询 -->
+    <select id="selectPageVo" resultType="cn.nice2cu.admin.domain.entity.PmsBrand">
+        SELECT * FROM pms_brand
+    </select>
+
 </mapper>
