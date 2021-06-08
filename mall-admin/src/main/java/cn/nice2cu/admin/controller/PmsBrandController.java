@@ -85,14 +85,5 @@ public class PmsBrandController {
     public CommonResult<PmsBrand> brand(@PathVariable("id") Long id) {
         return CommonResult.success(pmsBrandService.getBrand(id));
     }
-
-    @GetMapping(value = "/hello")
-    public String helloTest() {
-        LOGGER.info("HELLO-INFO");
-        LOGGER.debug("HELLO-DEBUG");
-        LOGGER.warn("HELLO-WARN");
-        LOGGER.error("HELLO-ERROR");
-        return "Hello World!";
-    }
 }
 

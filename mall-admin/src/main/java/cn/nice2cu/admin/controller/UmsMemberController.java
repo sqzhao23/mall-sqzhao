@@ -1,8 +1,10 @@
 package cn.nice2cu.admin.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import cn.nice2cu.admin.service.UmsMemberService;
+import cn.nice2cu.common.api.CommonResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -10,11 +12,24 @@ import org.springframework.web.bind.annotation.RestController;
  * </p>
  *
  * @author sqzhao
- * @since 2021-05-27
+ * @since 2021-06-07
  */
 @RestController
 @RequestMapping("/ums-member")
 public class UmsMemberController {
+    @Autowired
+    private UmsMemberService memberService;
 
+    @GetMapping(value = "/getAuthCode")
+    public CommonResult getAuthCode(@RequestParam String telephone) {
+        return memberService.generateAuthCode(telephone);
+    }
+
+    @PostMapping(value = "/verifyAuthCode")
+    @ResponseBody
+    public CommonResult updatePassword(@RequestParam String telephone,
+                                       @RequestParam String authCode) {
+        return memberService.verifyAuthCode(telephone,authCode);
+    }
 }
 
